@@ -9,18 +9,35 @@ def swap(x: int, array: list):
 
 
 def bubble_sort(array: list):
-    index = 0
+    sorted_list = list(array)
+    iteration = 1
+    while iteration < len(sorted_list):
+        index = 0
+        while index < len(sorted_list) - iteration:
+            if sorted_list[index] > sorted_list[index + 1]:
+                swap(index, sorted_list)
+            index +=1
+        iteration += 1
+    return sorted_list
 
-    while index < len(array) - 1:
-        if array[index] > array[index + 1]:
-            swap(index, array)
+
+def some_sort(array: list):
+    sorted_list = list(array)
+    index = 0
+    while index < len(sorted_list) - 1:
+        if sorted_list[index] > sorted_list[index + 1]:
+            swap(index, sorted_list)
             if index > 0:
                 index -= 1
         else:
             index += 1
+    return sorted_list
 
-    return array
 
-
+print("Sortierte Liste:")
+print(some_sort(rand_data))
+print("\nRandom Liste:")
+print(rand_data)
+print("\nBubblesort:")
 print(bubble_sort(rand_data))
 
