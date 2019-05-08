@@ -10,14 +10,14 @@ def swap(x: int, array: list):
 
 def bubble_sort(array: list):
     sorted_list = list(array)
-    iteration = 1
-    while iteration < len(sorted_list):
-        index = 0
-        while index < len(sorted_list) - iteration:
-            if sorted_list[index] > sorted_list[index + 1]:
-                swap(index, sorted_list)
-            index +=1
-        iteration += 1
+    for i in range(0, len(sorted_list) - 1):
+        change = False
+        for j in range(0, len(sorted_list) - i - 1):
+            if sorted_list[j] > sorted_list[j + 1]:
+                swap(j, sorted_list)
+                change = True
+        if not change:
+            break
     return sorted_list
 
 
