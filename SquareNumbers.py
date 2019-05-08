@@ -1,1 +1,1 @@
-print(pow(12, 2))
+print(pow(14, 2))
